@@ -4,7 +4,7 @@ const Skill = require('../models/skills')
 
 const middleware = require('../middlewares')
 
-router.get('/skills', (req, res) => {
+router.post('/skills', (req, res) => {
     Skill.find({})
     .then(skill => {
         if(!skill) res.status(404).json({error: 'no user with that email found'})
